@@ -9,7 +9,6 @@ function ReportIssue() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("infrastructure");
-
   const [message, setMessage] = useState("");
   const [requestCode, setRequestCode] = useState("");
   const [loading, setLoading] = useState(false);
@@ -30,7 +29,7 @@ function ReportIssue() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/issues",
+        `${import.meta.env.VITE_API_URL}/api/issues`,
         {
           method: "POST",
           headers: {
@@ -55,7 +54,6 @@ function ReportIssue() {
       }
 
       setRequestCode(data.issue.requestCode);
-
       setMessage("Issue submitted successfully!");
 
       setTitle("");
@@ -153,7 +151,7 @@ function ReportIssue() {
         <section className="report-heading">
 
           <span className="report-eyebrow">
-          COMPLAINO
+            COMPLAINO
           </span>
 
           <h1>Report an Issue</h1>
@@ -230,6 +228,7 @@ function ReportIssue() {
                   setCategory(event.target.value)
                 }
               >
+
                 <option value="academics">
                   Academics
                 </option>
@@ -257,6 +256,7 @@ function ReportIssue() {
                 <option value="other">
                   Other
                 </option>
+
               </select>
 
             </div>
@@ -275,6 +275,7 @@ function ReportIssue() {
 
           {/* Result */}
           {message && (
+
             <div
               className={`report-result ${
                 requestCode

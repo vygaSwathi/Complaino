@@ -27,7 +27,7 @@ function Register() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/auth/register",
+        `${import.meta.env.VITE_API_URL}/api/auth/register`,
         {
           method: "POST",
 
@@ -92,9 +92,7 @@ function Register() {
 
       <div className="register-glow register-glow-blue"></div>
 
-
       <div className="register-content">
-
 
         {/* ========================================
             BRAND
@@ -108,7 +106,7 @@ function Register() {
 
           <div>
             <h1>
-            COMPLAINO
+              COMPLAINO
             </h1>
 
             <p>
@@ -118,13 +116,11 @@ function Register() {
 
         </div>
 
-
         {/* ========================================
             REGISTER CARD
         ======================================== */}
 
         <div className="register-card">
-
 
           {/* Header */}
 
@@ -145,7 +141,6 @@ function Register() {
 
           </div>
 
-
           {/* ========================================
               FORM
           ======================================== */}
@@ -154,7 +149,6 @@ function Register() {
             onSubmit={handleRegister}
             className="register-form"
           >
-
 
             {/* ========================================
                 FULL NAME
@@ -185,7 +179,6 @@ function Register() {
 
             </div>
 
-
             {/* ========================================
                 EMAIL
             ======================================== */}
@@ -214,7 +207,6 @@ function Register() {
               </div>
 
             </div>
-
 
             {/* ========================================
                 PASSWORD
@@ -245,7 +237,6 @@ function Register() {
                   minLength={8}
                   required
                 />
-
 
                 {/* Password visibility toggle */}
 
@@ -343,7 +334,6 @@ function Register() {
 
             </div>
 
-
             {/* ========================================
                 SUBMIT
             ======================================== */}
@@ -360,7 +350,6 @@ function Register() {
 
           </form>
 
-
           {/* ========================================
               MESSAGE
           ======================================== */}
@@ -370,7 +359,6 @@ function Register() {
               {message}
             </div>
           )}
-
 
           {/* ========================================
               DIVIDER
@@ -383,7 +371,6 @@ function Register() {
             </span>
 
           </div>
-
 
           {/* ========================================
               LOGIN
@@ -407,7 +394,6 @@ function Register() {
           </div>
 
         </div>
-
 
         {/* ========================================
             BACK HOME

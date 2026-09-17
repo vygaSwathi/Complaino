@@ -34,7 +34,7 @@ function Support() {
 
       try {
         const response = await fetch(
-          "http://localhost:5000/api/issues/my",
+          `${import.meta.env.VITE_API_URL}/api/issues/my`,
           {
             method: "GET",
             headers: {
@@ -93,7 +93,7 @@ function Support() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/chat/my",
+        `${import.meta.env.VITE_API_URL}/api/chat/my`,
         {
           method: "GET",
 
@@ -184,7 +184,7 @@ function Support() {
   const handleLogout = async () => {
     try {
       await fetch(
-        "http://localhost:5000/api/auth/logout",
+        `${import.meta.env.VITE_API_URL}/api/auth/logout`,
         {
           method: "POST",
           credentials: "include",
@@ -241,7 +241,7 @@ function Support() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/chat/message",
+        `${import.meta.env.VITE_API_URL}/api/chat/message`,
         {
           method: "POST",
 

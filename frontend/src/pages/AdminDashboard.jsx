@@ -32,7 +32,7 @@ function AdminDashboard() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/issues",
+        `${import.meta.env.VITE_API_URL}/api/issues`,
         {
           method: "GET",
           headers: {
@@ -109,7 +109,7 @@ function AdminDashboard() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/issues/${selectedIssue._id}/status`,
+        `${import.meta.env.VITE_API_URL}/api/issues/${selectedIssue._id}/status`,
         {
           method: "PATCH",
 
@@ -170,7 +170,7 @@ function AdminDashboard() {
   const handleLogout = async () => {
     try {
       await fetch(
-        "http://localhost:5000/api/auth/logout",
+        `${import.meta.env.VITE_API_URL}/api/auth/logout`,
         {
           method: "POST",
           credentials: "include",

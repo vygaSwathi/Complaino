@@ -17,13 +17,12 @@ function Login() {
 
   const handleLogin = async (event) => {
     event.preventDefault();
-
     setMessage("");
     setLoading(true);
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/auth/login",
+        `${import.meta.env.VITE_API_URL}/api/auth/login`,
         {
           method: "POST",
           headers: {
@@ -47,10 +46,7 @@ function Login() {
       console.log("Login successful:", data);
 
       // Save access token temporarily
-      sessionStorage.setItem(
-        "accessToken",
-        data.accessToken
-      );
+      sessionStorage.setItem("accessToken", data.accessToken);
 
       // Send user to the correct dashboard
       if (data.user.role === "student") {
@@ -62,10 +58,7 @@ function Login() {
       }
     } catch (error) {
       console.error("Login error:", error);
-
-      setMessage(
-        "Unable to connect to the server"
-      );
+      setMessage("Unable to connect to the server");
     } finally {
       setLoading(false);
     }
@@ -73,33 +66,22 @@ function Login() {
 
   return (
     <div className="login-page">
-
       {/* Background gradient effects */}
       <div className="login-glow login-glow-pink"></div>
       <div className="login-glow login-glow-blue"></div>
 
       <div className="login-content">
-
         {/* ========================================
             BRAND
         ======================================== */}
 
         <div className="login-brand">
-
-          <div className="login-logo">
-            C
-          </div>
+          <div className="login-logo">C</div>
 
           <div>
-            <h1>
-              COMPLAINO
-            </h1>
-
-            <p>
-              Your campus. Your voice.
-            </p>
+            <h1>COMPLAINO</h1>
+            <p>Your campus. Your voice.</p>
           </div>
-
         </div>
 
         {/* ========================================
@@ -107,23 +89,17 @@ function Login() {
         ======================================== */}
 
         <div className="login-card">
-
           {/* Heading */}
+
           <div className="login-header">
+            <span>WELCOME BACK</span>
 
-            <span>
-              WELCOME BACK
-            </span>
-
-            <h2>
-              Sign in
-            </h2>
+            <h2>Sign in</h2>
 
             <p>
               Enter your credentials to access
               your campus dashboard.
             </p>
-
           </div>
 
           {/* ========================================
@@ -134,19 +110,16 @@ function Login() {
             onSubmit={handleLogin}
             className="login-form"
           >
-
             {/* ========================================
                 EMAIL
             ======================================== */}
 
             <div className="login-field">
-
               <label htmlFor="email">
                 Email
               </label>
 
               <div className="login-input">
-
                 <input
                   id="email"
                   type="email"
@@ -157,9 +130,7 @@ function Login() {
                   }
                   required
                 />
-
               </div>
-
             </div>
 
             {/* ========================================
@@ -167,13 +138,11 @@ function Login() {
             ======================================== */}
 
             <div className="login-field">
-
               <label htmlFor="password">
                 Password
               </label>
 
               <div className="login-input">
-
                 <input
                   id="password"
                   type={
@@ -205,17 +174,13 @@ function Login() {
                       : "Show password"
                   }
                 >
-
                   {showPassword ? (
-
                     /* Eye off */
-
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
                       aria-hidden="true"
                     >
-
                       <path
                         d="M3 3L21 21"
                         stroke="currentColor"
@@ -245,19 +210,14 @@ function Login() {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />
-
                     </svg>
-
                   ) : (
-
                     /* Eye */
-
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
                       aria-hidden="true"
                     >
-
                       <path
                         d="M2 12C2 12 5.5 5 12 5C18.5 5 22 12 22 12C22 12 18.5 19 12 19C5.5 19 2 12 2 12Z"
                         stroke="currentColor"
@@ -273,15 +233,10 @@ function Login() {
                         stroke="currentColor"
                         strokeWidth="1.8"
                       />
-
                     </svg>
-
                   )}
-
                 </button>
-
               </div>
-
             </div>
 
             {/* ========================================
@@ -297,7 +252,6 @@ function Login() {
                 ? "Signing in..."
                 : "Sign In"}
             </button>
-
           </form>
 
           {/* ========================================
@@ -315,9 +269,7 @@ function Login() {
           ======================================== */}
 
           <div className="login-divider">
-            <span>
-              OR
-            </span>
+            <span>OR</span>
           </div>
 
           {/* ========================================
@@ -325,10 +277,7 @@ function Login() {
           ======================================== */}
 
           <div className="login-register">
-
-            <span>
-              New to COMPLAINO?
-            </span>
+            <span>New to COMPLAINO?</span>
 
             <button
               type="button"
@@ -338,9 +287,7 @@ function Login() {
             >
               Create an account
             </button>
-
           </div>
-
         </div>
 
         {/* ========================================
@@ -350,15 +297,11 @@ function Login() {
         <button
           type="button"
           className="login-home"
-          onClick={() =>
-            navigate("/")
-          }
+          onClick={() => navigate("/")}
         >
           ← Back to home
         </button>
-
       </div>
-
     </div>
   );
 }

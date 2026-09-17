@@ -17,7 +17,6 @@ function CouncilDashboard() {
 
   const [updating, setUpdating] = useState(false);
 
-
   /* ========================================
      FETCH ISSUES
   ======================================== */
@@ -33,7 +32,7 @@ function CouncilDashboard() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/issues",
+        `${import.meta.env.VITE_API_URL}/api/issues`,
         {
           method: "GET",
           headers: {
@@ -69,7 +68,6 @@ function CouncilDashboard() {
     }
   };
 
-
   /* ========================================
      INITIAL LOAD
   ======================================== */
@@ -77,7 +75,6 @@ function CouncilDashboard() {
   useEffect(() => {
     fetchIssues();
   }, []);
-
 
   /* ========================================
      SELECT ISSUE
@@ -94,7 +91,6 @@ function CouncilDashboard() {
 
     setMessage("");
   };
-
 
   /* ========================================
      UPDATE ISSUE
@@ -118,7 +114,7 @@ function CouncilDashboard() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/issues/${selectedIssue._id}/status`,
+        `${import.meta.env.VITE_API_URL}/api/issues/${selectedIssue._id}/status`,
         {
           method: "PATCH",
 
@@ -180,7 +176,6 @@ function CouncilDashboard() {
     }
   };
 
-
   /* ========================================
      LOGOUT
   ======================================== */
@@ -188,7 +183,7 @@ function CouncilDashboard() {
   const handleLogout = async () => {
     try {
       await fetch(
-        "http://localhost:5000/api/auth/logout",
+        `${import.meta.env.VITE_API_URL}/api/auth/logout`,
         {
           method: "POST",
           credentials: "include",
@@ -209,7 +204,6 @@ function CouncilDashboard() {
       navigate("/login");
     }
   };
-
 
   /* ========================================
      STATUS FORMAT
@@ -234,7 +228,6 @@ function CouncilDashboard() {
     );
   };
 
-
   /* ========================================
      CATEGORY FORMAT
   ======================================== */
@@ -246,7 +239,6 @@ function CouncilDashboard() {
         letter.toUpperCase()
       );
   };
-
 
   /* ========================================
      DATE FORMAT
@@ -267,7 +259,6 @@ function CouncilDashboard() {
     );
   };
 
-
   /* ========================================
      RENDER
   ======================================== */
@@ -278,7 +269,6 @@ function CouncilDashboard() {
       <div className="council-glow council-glow-pink"></div>
 
       <div className="council-glow council-glow-blue"></div>
-
 
       {/* ==================================
           NAVBAR
@@ -304,7 +294,6 @@ function CouncilDashboard() {
 
         </button>
 
-
         <div className="council-nav-right">
 
           <div className="council-role">
@@ -317,7 +306,6 @@ function CouncilDashboard() {
 
           </div>
 
-
           <button
             className="council-logout"
             onClick={handleLogout}
@@ -329,13 +317,11 @@ function CouncilDashboard() {
 
       </header>
 
-
       {/* ==================================
           MAIN
       ================================== */}
 
       <main className="council-container">
-
 
         {/* ==================================
             HEADER
@@ -359,7 +345,6 @@ function CouncilDashboard() {
 
         </section>
 
-
         {/* ==================================
             MESSAGE
         ================================== */}
@@ -369,7 +354,6 @@ function CouncilDashboard() {
             {message}
           </div>
         )}
-
 
         {/* ==================================
             STATS
@@ -393,7 +377,6 @@ function CouncilDashboard() {
 
           </div>
 
-
           <div className="council-stat-card">
 
             <span>
@@ -416,7 +399,6 @@ function CouncilDashboard() {
 
           </div>
 
-
           <div className="council-stat-card">
 
             <span>
@@ -438,7 +420,6 @@ function CouncilDashboard() {
             </small>
 
           </div>
-
 
           <div className="council-stat-card">
 
@@ -464,13 +445,11 @@ function CouncilDashboard() {
 
         </section>
 
-
         {/* ==================================
             WORKSPACE
         ================================== */}
 
         <section className="council-workspace">
-
 
           {/* ==================================
               ISSUE LIST
@@ -492,20 +471,17 @@ function CouncilDashboard() {
 
               </div>
 
-
               <span className="council-count">
                 {issues.length}
               </span>
 
             </div>
 
-
             {loading && (
               <div className="council-loading">
                 Loading issues...
               </div>
             )}
-
 
             {!loading &&
               issues.length === 0 && (
@@ -524,7 +500,6 @@ function CouncilDashboard() {
                 </div>
 
               )}
-
 
             {!loading &&
               issues.length > 0 && (
@@ -566,18 +541,15 @@ function CouncilDashboard() {
 
                         </div>
 
-
                         <h3>
                           {issue.title}
                         </h3>
-
 
                         <p>
                           {issue.description}
                         </p>
 
                       </div>
-
 
                       <div className="council-issue-date">
 
@@ -602,7 +574,6 @@ function CouncilDashboard() {
               )}
 
           </div>
-
 
           {/* ==================================
               DETAILS PANEL
@@ -635,7 +606,6 @@ function CouncilDashboard() {
 
               <div className="council-details">
 
-
                 {/* Details Header */}
 
                 <div className="council-details-header">
@@ -652,7 +622,6 @@ function CouncilDashboard() {
 
                   </div>
 
-
                   <span
                     className={`council-status status-${selectedIssue.status}`}
                   >
@@ -662,7 +631,6 @@ function CouncilDashboard() {
                   </span>
 
                 </div>
-
 
                 {/* What happened */}
 
@@ -677,7 +645,6 @@ function CouncilDashboard() {
                   </p>
 
                 </div>
-
 
                 {/* Request Code + Category */}
 
@@ -695,7 +662,6 @@ function CouncilDashboard() {
 
                   </div>
 
-
                   <div>
 
                     <span>
@@ -711,7 +677,6 @@ function CouncilDashboard() {
                   </div>
 
                 </div>
-
 
                 {/* Date information */}
 
@@ -731,7 +696,6 @@ function CouncilDashboard() {
 
                   </div>
 
-
                   <div>
 
                     <span>
@@ -747,7 +711,6 @@ function CouncilDashboard() {
                   </div>
 
                 </div>
-
 
                 {/* Existing response */}
 
@@ -774,7 +737,6 @@ function CouncilDashboard() {
 
                 </div>
 
-
                 {/* New response */}
 
                 <div className="council-detail-section">
@@ -795,7 +757,6 @@ function CouncilDashboard() {
                   />
 
                 </div>
-
 
                 {/* Status */}
 
@@ -837,7 +798,6 @@ function CouncilDashboard() {
                   </select>
 
                 </div>
-
 
                 {/* Save */}
 

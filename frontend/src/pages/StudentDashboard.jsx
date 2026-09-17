@@ -31,7 +31,7 @@ function StudentDashboard() {
         const [issuesResponse, profileResponse] =
           await Promise.all([
             fetch(
-              "http://localhost:5000/api/issues/my",
+              `${import.meta.env.VITE_API_URL}/api/issues/my`,
               {
                 method: "GET",
                 headers: {
@@ -41,7 +41,7 @@ function StudentDashboard() {
             ),
 
             fetch(
-              "http://localhost:5000/api/auth/me",
+              `${import.meta.env.VITE_API_URL}/api/auth/me`,
               {
                 method: "GET",
                 headers: {
@@ -71,7 +71,6 @@ function StudentDashboard() {
         if (profileResponse.ok) {
           setUser(profileData.user);
         }
-
       } catch (error) {
         console.error(
           "Dashboard error:",
@@ -97,7 +96,7 @@ function StudentDashboard() {
   const handleLogout = async () => {
     try {
       await fetch(
-        "http://localhost:5000/api/auth/logout",
+        `${import.meta.env.VITE_API_URL}/api/auth/logout`,
         {
           method: "POST",
           credentials: "include",
@@ -213,7 +212,7 @@ function StudentDashboard() {
 
           <div>
             <h2>
-            COMPLAINO
+              COMPLAINO
             </h2>
 
             <span>
@@ -638,7 +637,7 @@ function StudentDashboard() {
           <div className="student-card facts-card">
 
             <span className="section-eyebrow">
-            COMPLAINO
+              COMPLAINO
             </span>
 
             <h2>
