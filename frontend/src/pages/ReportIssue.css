@@ -1,0 +1,644 @@
+/* ========================================
+   REPORT ISSUE PAGE
+======================================== */
+
+.report-page-wrapper {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+    background:
+      linear-gradient(
+        135deg,
+        #fff8fc 0%,
+        #f8f7ff 48%,
+        #f1f7ff 100%
+      );
+    color: #17284a;
+  }
+  
+  
+  /* ========================================
+     BACKGROUND GLOWS
+  ======================================== */
+  
+  .report-glow {
+    position: fixed;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    filter: blur(90px);
+    pointer-events: none;
+    opacity: 0.45;
+  }
+  
+  .report-glow-pink {
+    top: -160px;
+    left: -140px;
+    background: #ffd9ec;
+  }
+  
+  .report-glow-blue {
+    right: -160px;
+    bottom: -180px;
+    background: #dbe9ff;
+  }
+  
+  
+  /* ========================================
+     NAVBAR
+  ======================================== */
+  
+  .report-navbar {
+    width: 100%;
+    height: 76px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    padding: 0 52px;
+  
+    position: relative;
+    z-index: 10;
+  
+    background: rgba(255, 255, 255, 0.62);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  
+    border-bottom: 1px solid rgba(255, 255, 255, 0.75);
+  }
+  
+  
+  /* Brand */
+  
+  .report-brand {
+    border: none;
+    background: transparent;
+  
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  
+    padding: 0;
+  
+    cursor: pointer;
+    color: #17284a;
+  }
+  
+  .report-brand-mark {
+    width: 38px;
+    height: 38px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    border-radius: 12px;
+  
+    background: linear-gradient(
+      135deg,
+      #ffd9eb,
+      #dceaff
+    );
+  
+    color: #17284a;
+    font-size: 18px;
+    font-weight: 800;
+  
+    box-shadow:
+      0 8px 22px rgba(110, 120, 180, 0.12);
+  }
+  
+  .report-brand h2 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 750;
+    letter-spacing: -0.3px;
+  }
+  
+  .report-brand span {
+    display: block;
+    margin-top: 2px;
+  
+    font-size: 11px;
+    color: #7d879d;
+  }
+  
+  
+  /* Navigation */
+  
+  .report-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .report-nav button {
+    border: none;
+    background: transparent;
+  
+    padding: 11px 18px;
+    border-radius: 13px;
+  
+    color: #7d879d;
+  
+    font-size: 14px;
+    font-weight: 650;
+  
+    cursor: pointer;
+  
+    transition:
+      background 0.2s ease,
+      color 0.2s ease,
+      transform 0.2s ease;
+  }
+  
+  .report-nav button:hover {
+    color: #17284a;
+    background: rgba(255, 255, 255, 0.65);
+  }
+  
+  .report-nav .active-report-nav {
+    color: #17284a;
+  
+    background: rgba(255, 255, 255, 0.82);
+  
+    box-shadow:
+      0 8px 24px rgba(90, 100, 150, 0.08);
+  }
+  
+  
+  /* Profile */
+  
+  .report-profile-button {
+    width: 42px;
+    height: 42px;
+  
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+  
+    background: rgba(255, 255, 255, 0.72);
+  
+    color: #65718a;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    cursor: pointer;
+  
+    box-shadow:
+      0 8px 22px rgba(80, 90, 140, 0.08);
+  }
+  
+  .report-profile-button svg {
+    width: 21px;
+    height: 21px;
+  }
+  
+  
+  /* ========================================
+     CONTAINER
+  ======================================== */
+  
+  .report-container {
+    width: min(900px, calc(100% - 40px));
+  
+    margin: 0 auto;
+  
+    padding: 72px 0 60px;
+  
+    position: relative;
+    z-index: 2;
+  }
+  
+  
+  /* ========================================
+     HEADING
+  ======================================== */
+  
+  .report-heading {
+    margin-bottom: 34px;
+  }
+  
+  .report-eyebrow {
+    display: inline-block;
+  
+    margin-bottom: 12px;
+  
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+  
+    color: #7d89a3;
+  }
+  
+  .report-heading h1 {
+    margin: 0;
+  
+    font-size: clamp(38px, 5vw, 58px);
+    line-height: 1.05;
+  
+    letter-spacing: -2.5px;
+  
+    color: #17284a;
+  }
+  
+  .report-heading p {
+    max-width: 650px;
+  
+    margin: 18px 0 0;
+  
+    font-size: 16px;
+    line-height: 1.7;
+  
+    color: #707c94;
+  }
+  
+  
+  /* ========================================
+     FORM CARD
+  ======================================== */
+  
+  .report-card {
+    padding: 38px;
+  
+    border-radius: 28px;
+  
+    background: rgba(255, 255, 255, 0.62);
+  
+    border: 1px solid rgba(255, 255, 255, 0.82);
+  
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  
+    box-shadow:
+      0 24px 70px rgba(90, 100, 150, 0.09);
+  }
+  
+  
+  /* ========================================
+     FORM GROUP
+  ======================================== */
+  
+  .report-form-group {
+    margin-bottom: 25px;
+  }
+  
+  .report-form-group label {
+    display: block;
+  
+    margin-bottom: 9px;
+  
+    font-size: 13px;
+    font-weight: 750;
+  
+    color: #34415d;
+  }
+  
+  .report-form-group input,
+  .report-form-group textarea,
+  .report-form-group select {
+    width: 100%;
+  
+    border: 1px solid rgba(177, 185, 205, 0.48);
+  
+    border-radius: 14px;
+  
+    background: rgba(255, 255, 255, 0.72);
+  
+    color: #263653;
+  
+    font-family: inherit;
+    font-size: 14px;
+  
+    outline: none;
+  
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease,
+      background 0.2s ease;
+  }
+  
+  .report-form-group input,
+  .report-form-group select {
+    height: 52px;
+    padding: 0 16px;
+  }
+  
+  .report-form-group textarea {
+    min-height: 155px;
+    padding: 15px 16px;
+  
+    resize: vertical;
+  
+    line-height: 1.55;
+  }
+  
+  .report-form-group input::placeholder,
+  .report-form-group textarea::placeholder {
+    color: #a0a8ba;
+  }
+  
+  .report-form-group input:focus,
+  .report-form-group textarea:focus,
+  .report-form-group select:focus {
+    border-color: rgba(137, 155, 205, 0.75);
+  
+    background: rgba(255, 255, 255, 0.9);
+  
+    box-shadow:
+      0 0 0 4px rgba(181, 194, 235, 0.18);
+  }
+  
+  
+  /* ========================================
+     SUBMIT BUTTON
+  ======================================== */
+  
+  .report-submit-button {
+    width: 100%;
+    height: 54px;
+  
+    border: none;
+    border-radius: 15px;
+  
+    background: #17284a;
+  
+    color: white;
+  
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 750;
+  
+    cursor: pointer;
+  
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      opacity 0.2s ease;
+  }
+  
+  .report-submit-button:hover {
+    transform: translateY(-1px);
+  
+    box-shadow:
+      0 12px 28px rgba(23, 40, 74, 0.18);
+  }
+  
+  .report-submit-button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  
+  /* ========================================
+     RESULT
+  ======================================== */
+  
+  .report-result {
+    margin-top: 25px;
+  
+    padding: 25px;
+  
+    border-radius: 18px;
+  
+    text-align: center;
+  }
+  
+  .report-success {
+    background: rgba(236, 250, 243, 0.78);
+    border: 1px solid rgba(153, 220, 182, 0.35);
+  }
+  
+  .report-error {
+    background: rgba(255, 241, 244, 0.78);
+    border: 1px solid rgba(240, 166, 183, 0.35);
+  }
+  
+  .report-result > p:first-child {
+    margin: 0 0 18px;
+  
+    font-size: 14px;
+    font-weight: 700;
+  
+    color: #33415d;
+  }
+  
+  .request-code-label {
+    display: block;
+  
+    margin-bottom: 8px;
+  
+    font-size: 10px;
+    font-weight: 800;
+  
+    letter-spacing: 1.5px;
+  
+    color: #7c879c;
+  }
+  
+  .report-result .request-code {
+    display: block;
+  
+    font-size: 24px;
+    letter-spacing: 1px;
+  
+    color: #17284a;
+  }
+  
+  .request-code-info {
+    margin: 10px 0 20px !important;
+  
+    font-size: 13px !important;
+    font-weight: 400 !important;
+  
+    color: #7c879c !important;
+  }
+  
+  .view-issues-button {
+    border: none;
+  
+    padding: 11px 18px;
+  
+    border-radius: 11px;
+  
+    background: rgba(255, 255, 255, 0.85);
+  
+    color: #34415d;
+  
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+  
+    cursor: pointer;
+  
+    box-shadow:
+      0 6px 18px rgba(80, 90, 140, 0.08);
+  }
+  
+  
+  /* ========================================
+     BACK BUTTON
+  ======================================== */
+  
+  .report-back-button {
+    display: block;
+  
+    margin: 22px auto 0;
+  
+    border: none;
+    background: transparent;
+  
+    color: #7b869d;
+  
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 650;
+  
+    cursor: pointer;
+  }
+  
+  .report-back-button:hover {
+    color: #17284a;
+  }
+  
+  
+  /* ========================================
+     MOBILE
+  ======================================== */
+  
+  @media (max-width: 700px) {
+  
+    .report-navbar {
+      height: auto;
+      min-height: 70px;
+  
+      padding: 12px 18px;
+  
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+  
+    .report-brand h2 {
+      font-size: 15px;
+    }
+  
+    .report-brand span {
+      font-size: 10px;
+    }
+  
+    .report-nav {
+      order: 3;
+  
+      width: 100%;
+  
+      justify-content: center;
+  
+      padding-top: 4px;
+    }
+  
+    .report-nav button {
+      padding: 9px 13px;
+      font-size: 12px;
+    }
+  
+    .report-profile-button {
+      margin-left: auto;
+    }
+  
+    .report-container {
+      width: min(100% - 28px, 900px);
+  
+      padding-top: 48px;
+    }
+  
+    .report-heading h1 {
+      letter-spacing: -1.5px;
+    }
+  
+    .report-heading p {
+      font-size: 14px;
+    }
+  
+    .report-card {
+      padding: 22px;
+  
+      border-radius: 22px;
+    }
+  
+  }
+  /* ========================================
+   COMFORTABLE TYPOGRAPHY
+======================================== */
+
+.report-page {
+    font-size: 16px;
+  }
+  
+  .report-page p {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+  
+  .report-page label {
+    font-size: 13px;
+  }
+  
+  .report-page input,
+  .report-page textarea,
+  .report-page select {
+    font-size: 15px;
+  }
+  
+  .report-page button {
+    font-size: 14px;
+  }
+  
+  .report-navbar h2 {
+    font-size: 18px;
+  }
+  
+  .report-navbar span {
+    font-size: 12px;
+  }
+  
+  .report-nav button {
+    font-size: 13px;
+  }
+  
+  .report-eyebrow {
+    font-size: 11px;
+  }
+  
+  .report-page h1 {
+    font-size: clamp(38px, 4vw, 52px);
+  }
+  
+  .report-page h2 {
+    font-size: 23px;
+  }
+  
+  .report-page .report-description {
+    font-size: 16px;
+  }
+  
+  .report-page input,
+  .report-page textarea,
+  .report-page select {
+    min-height: 46px;
+  }
+  
+  .report-page textarea {
+    line-height: 1.6;
+  }
+  
+  .report-submit-button {
+    font-size: 15px;
+  }
+  
+  .report-result {
+    font-size: 15px;
+  }

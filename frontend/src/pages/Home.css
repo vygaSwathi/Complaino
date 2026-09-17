@@ -1,0 +1,1011 @@
+/* ========================================
+   CAMPUS CONNECT
+   RESPONSIVE HOME PAGE
+   Pale Pink + Blue Glassmorphism
+======================================== */
+
+* {
+    box-sizing: border-box;
+  }
+  
+  html,
+  body,
+  #root {
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
+  }
+  
+  body {
+    font-family:
+      Inter,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      sans-serif;
+  
+    color: #202637;
+  }
+  
+  
+  /* ========================================
+     HOME PAGE
+  ======================================== */
+  
+  .home-page {
+    min-height: 100vh;
+    width: 100%;
+  
+    position: relative;
+    overflow: hidden;
+  
+    background:
+      linear-gradient(
+        135deg,
+        #fff5f8 0%,
+        #faf9fc 48%,
+        #edf7ff 100%
+      );
+  }
+  
+  
+  /* ========================================
+     BACKGROUND GLOWS
+  ======================================== */
+  
+  .home-glow {
+    position: absolute;
+  
+    border-radius: 50%;
+  
+    pointer-events: none;
+  
+    filter: blur(40px);
+  
+    z-index: 0;
+  }
+  
+  .home-glow-pink {
+    width: clamp(280px, 40vw, 550px);
+    height: clamp(280px, 40vw, 550px);
+  
+    top: -25%;
+    left: -12%;
+  
+    background: rgba(255, 181, 207, 0.42);
+  }
+  
+  .home-glow-blue {
+    width: clamp(300px, 45vw, 620px);
+    height: clamp(300px, 45vw, 620px);
+  
+    right: -18%;
+    bottom: -30%;
+  
+    background: rgba(165, 211, 255, 0.45);
+  }
+  
+  
+  /* ========================================
+     NAVBAR
+  ======================================== */
+  
+  .home-navbar {
+    width: 100%;
+  
+    padding:
+      clamp(16px, 3vw, 28px)
+      clamp(18px, 6vw, 90px);
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    gap: 20px;
+  
+    position: relative;
+    z-index: 10;
+  }
+  
+  
+  /* ========================================
+     LOGO
+  ======================================== */
+  
+  .home-logo {
+    min-width: 0;
+  
+    display: flex;
+    align-items: center;
+  
+    gap: 12px;
+  }
+  
+  .home-logo-mark {
+    width: 46px;
+    height: 46px;
+  
+    flex-shrink: 0;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    border-radius: 14px;
+  
+    color: white;
+  
+    font-size: 20px;
+    font-weight: 700;
+  
+    background:
+      linear-gradient(
+        135deg,
+        #df9db8,
+        #8cbde8
+      );
+  
+    box-shadow:
+      0 10px 28px rgba(125, 155, 200, 0.25);
+  }
+  
+  .home-logo h2 {
+    margin: 0;
+  
+    color: #202637;
+  
+    font-size: clamp(16px, 1.5vw, 20px);
+    font-weight: 700;
+  
+    letter-spacing: -0.4px;
+  }
+  
+  .home-logo span {
+    display: block;
+  
+    margin-top: 2px;
+  
+    color: #8991a0;
+  
+    font-size: 11px;
+  
+    letter-spacing: 0.3px;
+  }
+  
+  
+  /* ========================================
+     NAVIGATION BUTTONS
+  ======================================== */
+  
+  .home-nav-actions {
+    display: flex;
+    align-items: center;
+  
+    gap: 10px;
+  
+    flex-shrink: 0;
+  }
+  
+  .home-nav-actions button {
+    min-height: 41px;
+  
+    padding: 0 clamp(13px, 1.8vw, 21px);
+  
+    border-radius: 12px;
+  
+    font-family: inherit;
+  
+    font-size: 13px;
+    font-weight: 600;
+  
+    white-space: nowrap;
+  
+    cursor: pointer;
+  
+    transition:
+      transform 0.2s ease,
+      background 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+  
+  
+  /* Login */
+  
+  .home-login-button {
+    color: #586274;
+  
+    background: rgba(255, 255, 255, 0.42);
+  
+    border: 1px solid rgba(140, 150, 170, 0.25);
+  
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+  }
+  
+  .home-login-button:hover {
+    background: rgba(255, 255, 255, 0.75);
+  
+    transform: translateY(-1px);
+  }
+  
+  
+  /* Register */
+  
+  .home-register-button {
+    color: white;
+  
+    border: 1px solid transparent;
+  
+    background:
+      linear-gradient(
+        110deg,
+        #d394b1,
+        #8bbbe3
+      );
+  
+    box-shadow:
+      0 8px 22px rgba(137, 163, 202, 0.23);
+  }
+  
+  .home-register-button:hover {
+    transform: translateY(-2px);
+  
+    box-shadow:
+      0 13px 28px rgba(137, 163, 202, 0.32);
+  }
+  
+  
+  /* ========================================
+     HERO
+  ======================================== */
+  
+  .home-hero {
+    width: min(1180px, 88%);
+  
+    min-height: calc(100vh - 100px);
+  
+    margin: 0 auto;
+  
+    display: grid;
+  
+    grid-template-columns:
+      minmax(0, 1.1fr)
+      minmax(320px, 0.9fr);
+  
+    align-items: center;
+  
+    gap: clamp(30px, 7vw, 100px);
+  
+    position: relative;
+  
+    z-index: 2;
+  
+    padding-bottom: 60px;
+  }
+  
+  
+  /* ========================================
+     HERO CONTENT
+  ======================================== */
+  
+  .home-hero-content {
+    width: 100%;
+  
+    padding-bottom: 20px;
+  }
+  
+  .home-eyebrow {
+    display: inline-block;
+  
+    margin-bottom: clamp(14px, 2vw, 22px);
+  
+    color: #a17d94;
+  
+    font-size: clamp(9px, 0.8vw, 11px);
+    font-weight: 700;
+  
+    letter-spacing: 3px;
+  }
+  
+  .home-hero h1 {
+    margin: 0;
+  
+    color: #202637;
+  
+    font-size: clamp(48px, 6.5vw, 88px);
+  
+    font-weight: 750;
+  
+    line-height: 0.96;
+  
+    letter-spacing: clamp(-4px, -0.35vw, -6px);
+  }
+  
+  .home-hero h1 span {
+    display: block;
+  
+    background:
+      linear-gradient(
+        110deg,
+        #d18eac,
+        #80b4df
+      );
+  
+    -webkit-background-clip: text;
+    background-clip: text;
+  
+    color: transparent;
+  }
+  
+  
+  /* ========================================
+     HERO DESCRIPTION
+  ======================================== */
+  
+  .home-hero-content > p {
+    width: min(100%, 570px);
+  
+    margin:
+      clamp(22px, 3vw, 32px)
+      0
+      0;
+  
+    color: #747d8e;
+  
+    font-size: clamp(14px, 1.3vw, 17px);
+  
+    line-height: 1.7;
+  }
+  
+  
+  /* ========================================
+     HERO BUTTONS
+  ======================================== */
+  
+  .home-hero-actions {
+    display: flex;
+    align-items: center;
+  
+    flex-wrap: wrap;
+  
+    gap: 12px;
+  
+    margin-top: clamp(25px, 3vw, 36px);
+  }
+  
+  .home-primary-button {
+    min-height: 53px;
+  
+    padding: 0 22px;
+  
+    display: flex;
+    align-items: center;
+  
+    justify-content: center;
+  
+    gap: 25px;
+  
+    border: none;
+    border-radius: 14px;
+  
+    color: white;
+  
+    font-family: inherit;
+  
+    font-size: 14px;
+    font-weight: 650;
+  
+    cursor: pointer;
+  
+    background:
+      linear-gradient(
+        110deg,
+        #d394b1,
+        #8ab9df
+      );
+  
+    box-shadow:
+      0 15px 32px rgba(139, 163, 201, 0.25);
+  
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+  
+  .home-primary-button:hover {
+    transform: translateY(-2px);
+  
+    box-shadow:
+      0 19px 36px rgba(139, 163, 201, 0.32);
+  }
+  
+  .home-primary-button span {
+    font-size: 18px;
+  }
+  
+  
+  .home-secondary-button {
+    min-height: 53px;
+  
+    padding: 0 20px;
+  
+    border: 1px solid rgba(135, 148, 170, 0.25);
+  
+    border-radius: 14px;
+  
+    color: #697386;
+  
+    font-family: inherit;
+  
+    font-size: 13px;
+  
+    white-space: nowrap;
+  
+    cursor: pointer;
+  
+    background: rgba(255, 255, 255, 0.32);
+  
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+  
+    transition:
+      background 0.2s ease,
+      transform 0.2s ease;
+  }
+  
+  .home-secondary-button:hover {
+    background: rgba(255, 255, 255, 0.65);
+  
+    transform: translateY(-1px);
+  }
+  
+  
+  /* ========================================
+     RIGHT VISUAL
+  ======================================== */
+  
+  .home-visual {
+    width: 100%;
+  
+    max-width: 430px;
+  
+    height: clamp(340px, 42vw, 440px);
+  
+    position: relative;
+  
+    justify-self: end;
+  }
+  
+  
+  /* ========================================
+     MAIN GLASS CARD
+  ======================================== */
+  
+  .home-glass-card {
+    width: min(330px, 82%);
+  
+    height: clamp(300px, 34vw, 360px);
+  
+    position: absolute;
+  
+    top: 4%;
+    right: 0;
+  
+    padding: 25px;
+  
+    border-radius: 30px;
+  
+    background:
+      linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.62),
+        rgba(255, 255, 255, 0.25)
+      );
+  
+    border: 1px solid rgba(255, 255, 255, 0.82);
+  
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+  
+    box-shadow:
+      0 30px 75px rgba(89, 107, 140, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  
+    transform: rotate(3deg);
+  }
+  
+  
+  /* ========================================
+     GLASS CARD HEADER
+  ======================================== */
+  
+  .glass-card-header {
+    display: flex;
+  
+    gap: 6px;
+  }
+  
+  .glass-dot {
+    width: 7px;
+    height: 7px;
+  
+    border-radius: 50%;
+  
+    background: rgba(120, 135, 155, 0.32);
+  }
+  
+  
+  /* ========================================
+     GLASS CARD CONTENT
+  ======================================== */
+  
+  .glass-card-content {
+    margin-top: clamp(55px, 7vw, 75px);
+  }
+  
+  .glass-label {
+    color: #9a8095;
+  
+    font-size: 9px;
+    font-weight: 700;
+  
+    letter-spacing: 2px;
+  }
+  
+  .glass-card-content h3 {
+    margin: 12px 0 35px;
+  
+    color: #30394b;
+  
+    font-size: clamp(28px, 3vw, 36px);
+  
+    line-height: 1.05;
+  
+    letter-spacing: -1.5px;
+  }
+  
+  
+  /* ========================================
+     STATUS
+  ======================================== */
+  
+  .glass-status {
+    display: flex;
+    align-items: center;
+  
+    gap: 9px;
+  
+    padding: 13px;
+  
+    border-radius: 12px;
+  
+    color: #70798a;
+  
+    font-size: 11px;
+  
+    background: rgba(255, 255, 255, 0.35);
+  }
+  
+  .glass-status span {
+    width: 7px;
+    height: 7px;
+  
+    flex-shrink: 0;
+  
+    border-radius: 50%;
+  
+    background: #86bca7;
+  }
+  
+  
+  /* ========================================
+     FLOATING CARD
+  ======================================== */
+  
+  .home-floating-card {
+    width: min(250px, 72%);
+  
+    position: absolute;
+  
+    left: 0;
+    bottom: 7%;
+  
+    display: flex;
+    align-items: center;
+  
+    gap: 13px;
+  
+    padding: 17px;
+  
+    border-radius: 17px;
+  
+    background: rgba(255, 255, 255, 0.6);
+  
+    border: 1px solid rgba(255, 255, 255, 0.8);
+  
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  
+    box-shadow:
+      0 20px 45px rgba(88, 105, 140, 0.13);
+  }
+  
+  .home-floating-card > span {
+    width: 35px;
+    height: 35px;
+  
+    flex-shrink: 0;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    border-radius: 11px;
+  
+    color: white;
+  
+    background:
+      linear-gradient(
+        135deg,
+        #d99bb6,
+        #91bde2
+      );
+  }
+  
+  .home-floating-card strong {
+    display: block;
+  
+    color: #40495b;
+  
+    font-size: 12px;
+  }
+  
+  .home-floating-card small {
+    display: block;
+  
+    margin-top: 3px;
+  
+    color: #8991a0;
+  
+    font-size: 10px;
+  }
+  
+  
+  /* ========================================
+     BOTTOM LABEL
+  ======================================== */
+  
+  .home-bottom {
+    position: absolute;
+  
+    left: clamp(20px, 7vw, 90px);
+    bottom: 22px;
+  
+    display: flex;
+    align-items: center;
+  
+    gap: 12px;
+  
+    color: #a0a6b1;
+  
+    font-size: 9px;
+    font-weight: 700;
+  
+    letter-spacing: 2px;
+  
+    z-index: 3;
+  
+    pointer-events: none;
+  }
+  
+  
+  /* ========================================
+     SHORT DESKTOP SCREENS
+  ======================================== */
+  
+  @media (max-height: 750px) and (min-width: 901px) {
+  
+    .home-hero {
+      min-height: auto;
+  
+      padding-top: 35px;
+      padding-bottom: 80px;
+    }
+  
+    .home-hero-content {
+      padding-bottom: 0;
+    }
+  
+    .home-hero h1 {
+      font-size: clamp(48px, 6vw, 76px);
+    }
+  
+    .home-hero-content > p {
+      margin-top: 22px;
+    }
+  
+    .home-hero-actions {
+      margin-top: 25px;
+    }
+  
+    .home-visual {
+      height: 350px;
+    }
+  
+    .home-glass-card {
+      height: 300px;
+    }
+  }
+  
+  
+  /* ========================================
+     TABLET
+  ======================================== */
+  
+  @media (max-width: 900px) {
+  
+    .home-hero {
+      width: 90%;
+  
+      min-height: auto;
+  
+      padding:
+        70px
+        0
+        90px;
+  
+      grid-template-columns: 1fr;
+  
+      text-align: center;
+  
+      gap: 50px;
+    }
+  
+    .home-hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+      padding-bottom: 0;
+    }
+  
+    .home-hero-content > p {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    .home-hero-actions {
+      justify-content: center;
+    }
+  
+    .home-visual {
+      width: min(430px, 90vw);
+  
+      justify-self: center;
+    }
+  
+    .home-bottom {
+      display: none;
+    }
+  }
+  
+  
+  /* ========================================
+     MOBILE
+  ======================================== */
+  
+  @media (max-width: 600px) {
+  
+    .home-navbar {
+      padding: 16px 20px;
+  
+      gap: 12px;
+    }
+  
+    .home-logo {
+      gap: 8px;
+    }
+  
+    .home-logo-mark {
+      width: 40px;
+      height: 40px;
+  
+      border-radius: 12px;
+    }
+  
+    .home-logo h2 {
+      font-size: 15px;
+    }
+  
+    .home-logo span {
+      display: none;
+    }
+  
+    .home-nav-actions {
+      gap: 6px;
+    }
+  
+    .home-nav-actions button {
+      min-height: 37px;
+  
+      padding: 0 11px;
+  
+      font-size: 12px;
+    }
+  
+    .home-hero {
+      width: 90%;
+  
+      padding-top: 60px;
+  
+      gap: 40px;
+    }
+  
+    .home-hero h1 {
+      font-size: clamp(45px, 13vw, 62px);
+  
+      letter-spacing: -3px;
+    }
+  
+    .home-hero-content > p {
+      font-size: 15px;
+  
+      line-height: 1.6;
+    }
+  
+    .home-hero-actions {
+      width: 100%;
+  
+      flex-direction: column;
+  
+      gap: 10px;
+    }
+  
+    .home-primary-button,
+    .home-secondary-button {
+      width: 100%;
+  
+      justify-content: center;
+    }
+  
+    .home-visual {
+      width: 100%;
+  
+      height: 330px;
+    }
+  
+    .home-glass-card {
+      width: 75%;
+  
+      height: 280px;
+  
+      padding: 20px;
+    }
+  
+    .home-floating-card {
+      width: 70%;
+  
+      padding: 13px;
+    }
+  }
+  
+  
+  /* ========================================
+     VERY SMALL PHONES
+  ======================================== */
+  
+  @media (max-width: 380px) {
+  
+    .home-navbar {
+      padding: 14px;
+    }
+  
+    .home-logo {
+      gap: 6px;
+    }
+  
+    .home-logo h2 {
+      font-size: 14px;
+    }
+  
+    .home-logo-mark {
+      width: 36px;
+      height: 36px;
+  
+      border-radius: 11px;
+    }
+  
+    .home-nav-actions {
+      gap: 4px;
+    }
+  
+    .home-nav-actions button {
+      min-height: 35px;
+  
+      padding: 0 9px;
+  
+      font-size: 11px;
+    }
+  
+    .home-hero {
+      padding-top: 45px;
+    }
+  
+    .home-hero h1 {
+      font-size: 43px;
+    }
+  
+    .home-visual {
+      height: 290px;
+    }
+  
+    .home-glass-card {
+      width: 78%;
+  
+      height: 245px;
+    }
+  
+    .home-floating-card {
+      width: 75%;
+    }
+  }
+  /* ========================================
+   COMFORTABLE HOME TYPOGRAPHY
+======================================== */
+
+.home-page {
+  font-size: 16px;
+}
+
+.home-page p {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Navbar */
+.home-page .home-brand h2 {
+  font-size: 18px;
+}
+
+.home-page .home-brand span {
+  font-size: 12px;
+}
+
+.home-page .home-nav button {
+  font-size: 14px;
+}
+
+/* Hero */
+.home-page .home-eyebrow {
+  font-size: 11px;
+}
+
+.home-page h1 {
+  font-size: clamp(44px, 6vw, 72px);
+  line-height: 1.05;
+}
+
+.home-page .hero-description {
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* Buttons */
+.home-page button {
+  font-size: 14px;
+}
+
+/* Feature cards */
+.home-page .feature-card h3 {
+  font-size: 18px;
+}
+
+.home-page .feature-card p {
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* Secondary text */
+.home-page small {
+  font-size: 12px;
+}

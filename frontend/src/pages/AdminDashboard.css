@@ -1,0 +1,1422 @@
+/* ========================================
+   ADMIN DASHBOARD
+======================================== */
+
+.admin-page {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+  
+    background:
+      linear-gradient(
+        135deg,
+        #fff8fc 0%,
+        #f8f7ff 45%,
+        #f0f6ff 100%
+      );
+  
+    color: #17284a;
+  }
+  
+  
+  /* ========================================
+     BACKGROUND GLOWS
+  ======================================== */
+  
+  .admin-glow {
+    position: fixed;
+  
+    width: 450px;
+    height: 450px;
+  
+    border-radius: 50%;
+  
+    filter: blur(100px);
+  
+    pointer-events: none;
+  
+    opacity: 0.42;
+  
+    z-index: 0;
+  }
+  
+  .admin-glow-pink {
+    top: -180px;
+    left: -170px;
+  
+    background: #ffd9eb;
+  }
+  
+  .admin-glow-blue {
+    right: -180px;
+    bottom: -180px;
+  
+    background: #d8e8ff;
+  }
+  
+  
+  /* ========================================
+     NAVBAR
+  ======================================== */
+  
+  .admin-navbar {
+    width: 100%;
+    height: 76px;
+  
+    padding: 0 48px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    position: relative;
+    z-index: 10;
+  
+    background: rgba(255, 255, 255, 0.66);
+  
+    border-bottom: 1px solid
+      rgba(255, 255, 255, 0.85);
+  
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+  
+    box-shadow:
+      0 8px 30px rgba(70, 80, 130, 0.04);
+  }
+  
+  
+  /* ========================================
+     BRAND
+  ======================================== */
+  
+  .admin-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  
+    padding: 0;
+  
+    border: none;
+  
+    background: transparent;
+  
+    color: #17284a;
+  
+    cursor: pointer;
+  
+    text-align: left;
+  }
+  
+  .admin-brand-mark {
+    width: 40px;
+    height: 40px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    border-radius: 13px;
+  
+    background:
+      linear-gradient(
+        135deg,
+        #ffd8ea,
+        #dce9ff
+      );
+  
+    font-size: 18px;
+    font-weight: 850;
+  
+    box-shadow:
+      0 8px 24px
+      rgba(100, 110, 160, 0.12);
+  }
+  
+  .admin-brand h2 {
+    margin: 0;
+  
+    font-size: 17px;
+  
+    font-weight: 800;
+  
+    letter-spacing: -0.4px;
+  }
+  
+  .admin-brand span {
+    display: block;
+  
+    margin-top: 3px;
+  
+    font-size: 11px;
+  
+    color: #8490a7;
+  }
+  
+  
+  /* ========================================
+     NAV RIGHT
+  ======================================== */
+  
+  .admin-nav-right {
+    display: flex;
+    align-items: center;
+  
+    gap: 18px;
+  }
+  
+  
+  /* ========================================
+     ADMIN ROLE
+  ======================================== */
+  
+  .admin-role {
+    display: flex;
+    flex-direction: column;
+  
+    align-items: flex-end;
+  
+    gap: 2px;
+  }
+  
+  .admin-role span {
+    font-size: 9px;
+  
+    font-weight: 800;
+  
+    letter-spacing: 1.4px;
+  
+    color: #9aa3b6;
+  }
+  
+  .admin-role strong {
+    font-size: 12px;
+  
+    font-weight: 700;
+  
+    color: #526078;
+  }
+  
+  
+  /* ========================================
+     LOGOUT
+  ======================================== */
+  
+  .admin-logout {
+    height: 40px;
+  
+    padding: 0 17px;
+  
+    border: 1px solid
+      rgba(180, 188, 205, 0.4);
+  
+    border-radius: 12px;
+  
+    background:
+      rgba(255, 255, 255, 0.72);
+  
+    color: #5f6b82;
+  
+    font-family: inherit;
+  
+    font-size: 12px;
+  
+    font-weight: 700;
+  
+    cursor: pointer;
+  
+    transition:
+      background 0.2s ease,
+      color 0.2s ease,
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+  
+  .admin-logout:hover {
+    background: white;
+  
+    color: #17284a;
+  
+    transform: translateY(-1px);
+  
+    box-shadow:
+      0 8px 20px
+      rgba(80, 90, 140, 0.08);
+  }
+  
+  
+  /* ========================================
+     MAIN CONTAINER
+  ======================================== */
+  
+  .admin-container {
+    width: min(
+      1440px,
+      calc(100% - 72px)
+    );
+  
+    margin: 0 auto;
+  
+    padding: 62px 0 70px;
+  
+    position: relative;
+  
+    z-index: 2;
+  }
+  
+  
+  /* ========================================
+     HEADING
+  ======================================== */
+  
+  .admin-heading {
+    margin-bottom: 34px;
+  }
+  
+  .admin-eyebrow {
+    display: inline-block;
+  
+    margin-bottom: 10px;
+  
+    font-size: 10px;
+  
+    font-weight: 850;
+  
+    letter-spacing: 1.8px;
+  
+    color: #7f8aa1;
+  }
+  
+  .admin-heading h1 {
+    margin: 0;
+  
+    font-size: clamp(
+      38px,
+      4vw,
+      54px
+    );
+  
+    line-height: 1.05;
+  
+    letter-spacing: -2.4px;
+  
+    color: #17284a;
+  }
+  
+  .admin-heading p {
+    max-width: 680px;
+  
+    margin: 15px 0 0;
+  
+    font-size: 15px;
+  
+    line-height: 1.7;
+  
+    color: #748096;
+  }
+  
+  
+  /* ========================================
+     MESSAGE
+  ======================================== */
+  
+  .admin-message {
+    margin-bottom: 20px;
+  
+    padding: 13px 17px;
+  
+    border-radius: 13px;
+  
+    background:
+      rgba(255, 255, 255, 0.65);
+  
+    border: 1px solid
+      rgba(255, 255, 255, 0.85);
+  
+    color: #56627a;
+  
+    font-size: 13px;
+  
+    box-shadow:
+      0 8px 25px
+      rgba(80, 90, 140, 0.05);
+  }
+  
+  
+  /* ========================================
+     STATISTICS
+  ======================================== */
+  
+  .admin-stats {
+    display: grid;
+  
+    grid-template-columns:
+      repeat(4, minmax(0, 1fr));
+  
+    gap: 17px;
+  
+    margin-bottom: 25px;
+  }
+  
+  .admin-stat-card {
+    min-height: 150px;
+  
+    padding: 23px;
+  
+    display: flex;
+  
+    flex-direction: column;
+  
+    justify-content: space-between;
+  
+    border-radius: 22px;
+  
+    background:
+      rgba(255, 255, 255, 0.62);
+  
+    border: 1px solid
+      rgba(255, 255, 255, 0.86);
+  
+    backdrop-filter: blur(20px);
+  
+    -webkit-backdrop-filter: blur(20px);
+  
+    box-shadow:
+      0 18px 45px
+      rgba(80, 90, 140, 0.075);
+  
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+  
+  .admin-stat-card:hover {
+    transform: translateY(-2px);
+  
+    box-shadow:
+      0 24px 55px
+      rgba(80, 90, 140, 0.11);
+  }
+  
+  .admin-stat-card span {
+    font-size: 12px;
+  
+    font-weight: 700;
+  
+    color: #7d889f;
+  }
+  
+  .admin-stat-card strong {
+    margin-top: 12px;
+  
+    font-size: 36px;
+  
+    line-height: 1;
+  
+    letter-spacing: -1.5px;
+  
+    color: #17284a;
+  }
+  
+  .admin-stat-card small {
+    margin-top: 9px;
+  
+    font-size: 11px;
+  
+    color: #a0a8b9;
+  }
+  
+  
+  /* ========================================
+     WORKSPACE
+  ======================================== */
+  
+  .admin-workspace {
+    display: grid;
+  
+    grid-template-columns:
+      minmax(0, 1.15fr)
+      minmax(390px, 0.85fr);
+  
+    gap: 20px;
+  
+    align-items: start;
+  }
+  
+  
+  /* ========================================
+     PANELS
+  ======================================== */
+  
+  .admin-issues-panel,
+  .admin-details-panel {
+    border-radius: 26px;
+  
+    background:
+      rgba(255, 255, 255, 0.61);
+  
+    border: 1px solid
+      rgba(255, 255, 255, 0.86);
+  
+    backdrop-filter: blur(22px);
+  
+    -webkit-backdrop-filter: blur(22px);
+  
+    box-shadow:
+      0 25px 70px
+      rgba(80, 90, 140, 0.085);
+  }
+  
+  .admin-issues-panel {
+    min-height: 620px;
+  
+    overflow: hidden;
+  }
+  
+  .admin-details-panel {
+    position: sticky;
+  
+    top: 20px;
+  
+    min-height: 620px;
+  }
+  
+  
+  /* ========================================
+     PANEL HEADER
+  ======================================== */
+  
+  .admin-panel-header {
+    padding: 25px 27px 22px;
+  
+    display: flex;
+  
+    align-items: center;
+  
+    justify-content: space-between;
+  
+    border-bottom: 1px solid
+      rgba(150, 160, 185, 0.12);
+  }
+  
+  .admin-section-label {
+    display: block;
+  
+    margin-bottom: 7px;
+  
+    font-size: 9px;
+  
+    font-weight: 850;
+  
+    letter-spacing: 1.7px;
+  
+    color: #8993a8;
+  }
+  
+  .admin-panel-header h2 {
+    margin: 0;
+  
+    font-size: 21px;
+  
+    letter-spacing: -0.6px;
+  
+    color: #243451;
+  }
+  
+  .admin-count {
+    min-width: 34px;
+  
+    height: 34px;
+  
+    padding: 0 9px;
+  
+    display: flex;
+  
+    align-items: center;
+  
+    justify-content: center;
+  
+    border-radius: 11px;
+  
+    background:
+      rgba(240, 243, 250, 0.9);
+  
+    color: #66738c;
+  
+    font-size: 12px;
+  
+    font-weight: 800;
+  }
+  
+  
+  /* ========================================
+     ISSUE LIST
+  ======================================== */
+  
+  .admin-issue-list {
+    padding: 8px 10px 12px;
+  }
+  
+  .admin-issue-row {
+    width: 100%;
+  
+    display: flex;
+  
+    align-items: flex-start;
+  
+    justify-content: space-between;
+  
+    gap: 18px;
+  
+    padding: 20px 17px;
+  
+    border: none;
+  
+    border-bottom: 1px solid
+      rgba(150, 160, 185, 0.11);
+  
+    background: transparent;
+  
+    color: inherit;
+  
+    font-family: inherit;
+  
+    text-align: left;
+  
+    cursor: pointer;
+  
+    border-radius: 15px;
+  
+    transition:
+      background 0.2s ease,
+      transform 0.2s ease;
+  }
+  
+  .admin-issue-row:last-child {
+    border-bottom: none;
+  }
+  
+  .admin-issue-row:hover {
+    background:
+      rgba(255, 255, 255, 0.63);
+  }
+  
+  .admin-issue-row.selected {
+    background:
+      rgba(255, 255, 255, 0.88);
+  
+    box-shadow:
+      0 10px 28px
+      rgba(80, 90, 140, 0.065);
+  }
+  
+  .issue-row-main {
+    min-width: 0;
+  
+    flex: 1;
+  }
+  
+  .issue-row-top {
+    display: flex;
+  
+    align-items: center;
+  
+    gap: 9px;
+  
+    margin-bottom: 9px;
+  }
+  
+  .issue-row-top > span:first-child {
+    font-size: 9px;
+  
+    font-weight: 800;
+  
+    letter-spacing: 0.9px;
+  
+    text-transform: uppercase;
+  
+    color: #929caf;
+  }
+  
+  .admin-status {
+    display: inline-flex;
+  
+    align-items: center;
+  
+    padding: 5px 9px;
+  
+    border-radius: 999px;
+  
+    font-size: 9px;
+  
+    font-weight: 800;
+  
+    letter-spacing: 0.2px;
+  
+    text-transform: uppercase;
+  }
+  
+  
+  /* ========================================
+     STATUS COLORS
+  ======================================== */
+  
+  .status-pending_review {
+    background: #fff3df;
+  
+    color: #a26d1e;
+  }
+  
+  .status-open {
+    background: #e9f1ff;
+  
+    color: #5273a8;
+  }
+  
+  .status-in_progress {
+    background: #eeeaff;
+  
+    color: #7163a8;
+  }
+  
+  .status-resolved {
+    background: #e8f7ef;
+  
+    color: #4f8b6a;
+  }
+  
+  .status-rejected {
+    background: #ffebef;
+  
+    color: #aa6876;
+  }
+  
+  
+  /* ========================================
+     ISSUE ROW TEXT
+  ======================================== */
+  
+  .issue-row-main h3 {
+    margin: 0;
+  
+    font-size: 15px;
+  
+    font-weight: 750;
+  
+    letter-spacing: -0.2px;
+  
+    color: #263654;
+  }
+  
+  .issue-row-main p {
+    margin: 7px 0 0;
+  
+    display: -webkit-box;
+  
+    -webkit-line-clamp: 2;
+  
+    line-clamp: 2;
+  
+    -webkit-box-orient: vertical;
+  
+    overflow: hidden;
+  
+    font-size: 12px;
+  
+    line-height: 1.55;
+  
+    color: #7c879d;
+  }
+  
+  .issue-row-date {
+    flex-shrink: 0;
+  
+    display: flex;
+  
+    align-items: center;
+  
+    gap: 9px;
+  
+    padding-top: 2px;
+  
+    color: #9aa3b4;
+  
+    font-size: 10px;
+  }
+  
+  .issue-row-date strong {
+    font-size: 16px;
+  
+    color: #a4adbd;
+  
+    font-weight: 500;
+  }
+  
+  
+  /* ========================================
+     LOADING / EMPTY
+  ======================================== */
+  
+  .admin-loading,
+  .admin-empty {
+    padding: 70px 30px;
+  
+    text-align: center;
+  
+    color: #8b95a8;
+  }
+  
+  .admin-empty h3 {
+    margin: 0 0 8px;
+  
+    font-size: 16px;
+  
+    color: #4b5870;
+  }
+  
+  .admin-empty p {
+    margin: 0;
+  
+    font-size: 13px;
+  }
+  
+  
+  /* ========================================
+     NO SELECTION
+  ======================================== */
+  
+  .admin-no-selection {
+    min-height: 620px;
+  
+    padding: 50px 35px;
+  
+    display: flex;
+  
+    flex-direction: column;
+  
+    align-items: center;
+  
+    justify-content: center;
+  
+    text-align: center;
+  }
+  
+  .admin-detail-icon {
+    width: 52px;
+    height: 52px;
+  
+    display: flex;
+  
+    align-items: center;
+  
+    justify-content: center;
+  
+    margin-bottom: 17px;
+  
+    border-radius: 16px;
+  
+    background:
+      linear-gradient(
+        135deg,
+        #ffe1ef,
+        #e1ebff
+      );
+  
+    color: #6d7890;
+  
+    font-size: 25px;
+  
+    font-weight: 300;
+  
+    box-shadow:
+      0 12px 30px
+      rgba(90, 100, 150, 0.08);
+  }
+  
+  .admin-no-selection h3 {
+    margin: 0;
+  
+    font-size: 17px;
+  
+    color: #34425e;
+  }
+  
+  .admin-no-selection p {
+    max-width: 280px;
+  
+    margin: 9px 0 0;
+  
+    font-size: 12px;
+  
+    line-height: 1.65;
+  
+    color: #8993a7;
+  }
+  
+  
+  /* ========================================
+     DETAILS
+  ======================================== */
+  
+  .admin-details {
+    padding: 27px;
+  }
+  
+  .details-header {
+    display: flex;
+  
+    align-items: flex-start;
+  
+    justify-content: space-between;
+  
+    gap: 15px;
+  
+    padding-bottom: 23px;
+  
+    border-bottom: 1px solid
+      rgba(150, 160, 185, 0.12);
+  }
+  
+  .details-header h2 {
+    margin: 0;
+  
+    max-width: 360px;
+  
+    font-size: 22px;
+  
+    line-height: 1.2;
+  
+    letter-spacing: -0.7px;
+  
+    color: #243451;
+  }
+  
+  
+  /* ========================================
+     DETAIL SECTIONS
+  ======================================== */
+  
+  .detail-section {
+    padding: 20px 0;
+  
+    border-bottom: 1px solid
+      rgba(150, 160, 185, 0.1);
+  }
+  
+  .detail-section > span,
+  .detail-grid span,
+  .admin-student-box > span {
+    display: block;
+  
+    margin-bottom: 8px;
+  
+    font-size: 9px;
+  
+    font-weight: 850;
+  
+    letter-spacing: 1.4px;
+  
+    color: #929bad;
+  }
+  
+  .detail-section > p {
+    margin: 0;
+  
+    font-size: 13px;
+  
+    line-height: 1.65;
+  
+    color: #66738b;
+  }
+  
+  
+  /* ========================================
+     DETAIL GRID
+  ======================================== */
+  
+  .detail-grid {
+    display: grid;
+  
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  
+    gap: 12px;
+  
+    padding: 19px 0;
+  
+    border-bottom: 1px solid
+      rgba(150, 160, 185, 0.1);
+  }
+  
+  .detail-grid > div {
+    min-width: 0;
+  
+    padding: 12px;
+  
+    border-radius: 12px;
+  
+    background:
+      rgba(247, 248, 252, 0.72);
+  }
+  
+  .detail-grid strong {
+    display: block;
+  
+    font-size: 12px;
+  
+    line-height: 1.4;
+  
+    color: #47546c;
+  
+    word-break: break-word;
+  }
+  
+  
+  /* ========================================
+     STUDENT INFORMATION
+  ======================================== */
+  
+  .admin-student-box {
+    margin: 19px 0;
+  
+    padding: 17px;
+  
+    border-radius: 16px;
+  
+    background:
+      linear-gradient(
+        135deg,
+        rgba(255, 235, 245, 0.55),
+        rgba(233, 241, 255, 0.55)
+      );
+  
+    border: 1px solid
+      rgba(255, 255, 255, 0.8);
+  }
+  
+  .admin-student-box h3 {
+    margin: 0;
+  
+    font-size: 15px;
+  
+    color: #34425e;
+  }
+  
+  .admin-student-box p {
+    margin: 5px 0 0;
+  
+    font-size: 12px;
+  
+    color: #7b869c;
+  
+    word-break: break-word;
+  }
+  
+  
+  /* ========================================
+     RESPONSE TEXTAREA
+  ======================================== */
+  
+  .detail-section textarea {
+    width: 100%;
+  
+    min-height: 105px;
+  
+    padding: 13px 14px;
+  
+    resize: vertical;
+  
+    border: 1px solid
+      rgba(177, 185, 205, 0.48);
+  
+    border-radius: 13px;
+  
+    background:
+      rgba(255, 255, 255, 0.72);
+  
+    color: #3d4b64;
+  
+    font-family: inherit;
+  
+    font-size: 12px;
+  
+    line-height: 1.55;
+  
+    outline: none;
+  
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease,
+      background 0.2s ease;
+  }
+  
+  .detail-section textarea::placeholder {
+    color: #a3abbc;
+  }
+  
+  .detail-section textarea:focus {
+    background:
+      rgba(255, 255, 255, 0.92);
+  
+    border-color:
+      rgba(137, 155, 205, 0.72);
+  
+    box-shadow:
+      0 0 0 4px
+      rgba(181, 194, 235, 0.16);
+  }
+  
+  
+  /* ========================================
+     STATUS SELECT
+  ======================================== */
+  
+  .detail-section select {
+    width: 100%;
+  
+    height: 45px;
+  
+    padding: 0 13px;
+  
+    border: 1px solid
+      rgba(177, 185, 205, 0.48);
+  
+    border-radius: 12px;
+  
+    background:
+      rgba(255, 255, 255, 0.75);
+  
+    color: #4b5870;
+  
+    font-family: inherit;
+  
+    font-size: 12px;
+  
+    font-weight: 650;
+  
+    outline: none;
+  
+    cursor: pointer;
+  }
+  
+  .detail-section select:focus {
+    border-color:
+      rgba(137, 155, 205, 0.72);
+  
+    box-shadow:
+      0 0 0 4px
+      rgba(181, 194, 235, 0.16);
+  }
+  
+  
+  /* ========================================
+     SAVE BUTTON
+  ======================================== */
+  
+  .admin-save-button {
+    width: 100%;
+  
+    height: 50px;
+  
+    margin-top: 22px;
+  
+    border: none;
+  
+    border-radius: 14px;
+  
+    background: #17284a;
+  
+    color: white;
+  
+    font-family: inherit;
+  
+    font-size: 13px;
+  
+    font-weight: 750;
+  
+    cursor: pointer;
+  
+    box-shadow:
+      0 12px 28px
+      rgba(23, 40, 74, 0.16);
+  
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      opacity 0.2s ease;
+  }
+  
+  .admin-save-button:hover {
+    transform: translateY(-1px);
+  
+    box-shadow:
+      0 16px 34px
+      rgba(23, 40, 74, 0.21);
+  }
+  
+  .admin-save-button:disabled {
+    opacity: 0.55;
+  
+    cursor: not-allowed;
+  
+    transform: none;
+  }
+  
+  
+  /* ========================================
+     RESPONSIVE
+  ======================================== */
+  
+  @media (max-width: 1100px) {
+  
+    .admin-workspace {
+      grid-template-columns: 1fr;
+    }
+  
+    .admin-details-panel {
+      position: relative;
+  
+      top: auto;
+    }
+  
+  }
+  
+  
+  @media (max-width: 850px) {
+  
+    .admin-container {
+      width: min(
+        100% - 32px,
+        1440px
+      );
+  
+      padding-top: 45px;
+    }
+  
+    .admin-navbar {
+      padding: 0 25px;
+    }
+  
+    .admin-stats {
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+    }
+  
+  }
+  
+  
+  @media (max-width: 600px) {
+  
+    .admin-navbar {
+      height: auto;
+  
+      padding: 15px 18px;
+  
+      gap: 15px;
+    }
+  
+    .admin-brand h2 {
+      font-size: 15px;
+    }
+  
+    .admin-brand span {
+      font-size: 10px;
+    }
+  
+    .admin-role {
+      display: none;
+    }
+  
+    .admin-logout {
+      height: 36px;
+  
+      padding: 0 12px;
+    }
+  
+    .admin-container {
+      width: calc(100% - 24px);
+  
+      padding-top: 35px;
+    }
+  
+    .admin-heading h1 {
+      font-size: 38px;
+  
+      letter-spacing: -1.7px;
+    }
+  
+    .admin-heading p {
+      font-size: 13px;
+    }
+  
+    .admin-stats {
+      grid-template-columns: 1fr;
+  
+      gap: 12px;
+    }
+  
+    .admin-stat-card {
+      min-height: 125px;
+    }
+  
+    .admin-issues-panel,
+    .admin-details-panel {
+      border-radius: 21px;
+    }
+  
+    .admin-panel-header {
+      padding: 21px;
+    }
+  
+    .admin-issue-row {
+      padding: 17px 12px;
+    }
+  
+    .issue-row-date {
+      display: none;
+    }
+  
+    .admin-details {
+      padding: 21px;
+    }
+  
+    .details-header {
+      flex-direction: column;
+    }
+  
+    .detail-grid {
+      grid-template-columns: 1fr;
+    }
+  
+  }
+  /* ========================================
+   COMFORTABLE ADMIN TYPOGRAPHY
+======================================== */
+
+.admin-page {
+    font-size: 16px;
+  }
+  
+  /* Main text */
+  .admin-page p {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+  
+  /* Navbar */
+  .admin-brand h2 {
+    font-size: 18px;
+  }
+  
+  .admin-brand span {
+    font-size: 12px;
+  }
+  
+  .admin-role strong {
+    font-size: 13px;
+  }
+  
+  .admin-logout {
+    font-size: 14px;
+  }
+  
+  /* Page heading */
+  .admin-heading h1 {
+    font-size: clamp(40px, 4vw, 54px);
+  }
+  
+  .admin-heading p {
+    font-size: 16px;
+  }
+  
+  /* Section labels */
+  .admin-eyebrow,
+  .admin-section-label {
+    font-size: 11px;
+  }
+  
+  /* Statistics */
+  .admin-stat-card span {
+    font-size: 13px;
+  }
+  
+  .admin-stat-card strong {
+    font-size: 38px;
+  }
+  
+  .admin-stat-card small {
+    font-size: 12px;
+  }
+  
+  /* Issue list */
+  .admin-panel-header h2 {
+    font-size: 22px;
+  }
+  
+  .admin-count {
+    font-size: 13px;
+  }
+  
+  .admin-issue-row h3 {
+    font-size: 17px;
+  }
+  
+  .admin-issue-row p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  .admin-issue-meta {
+    font-size: 12px;
+  }
+  
+  .admin-status {
+    font-size: 11px;
+  }
+  
+  /* Details panel */
+  .admin-details-header h2 {
+    font-size: 23px;
+  }
+  
+  .admin-detail-section > span,
+  .admin-detail-grid span,
+  .admin-student-info > span {
+    font-size: 10px;
+  }
+  
+  .admin-detail-section > p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  
+  /* Student information */
+  .admin-student-info strong {
+    font-size: 14px;
+  }
+  
+  .admin-student-info p {
+    font-size: 14px;
+  }
+  
+  /* Existing response */
+  .admin-existing-response p {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+  
+  /* Response textarea */
+  .admin-detail-section textarea {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  
+  /* Status selector */
+  .admin-detail-section select {
+    font-size: 14px;
+  }
+  
+  /* Save button */
+  .admin-save-button {
+    font-size: 15px;
+  }
